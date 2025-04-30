@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload & Download</title>
+    <link rel="stylesheet" href="../CSS/UpDown.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload & Download</h1>
+        <!-- Tải lên tệp -->
+        <input type="file" id="fileInput" />
+        <button onclick="uploadFile()">Upload</button>
+        <p id="uploadStatus"></p>
+
+        <!-- Tải xuống tệp -->
+        <button onclick="downloadFile()">Download Sample File</button>
+    </div>
+
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadStatus = document.getElementById('uploadStatus');
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                // Đây chỉ là ví dụ, xử lý tệp tùy thuộc vào backend hoặc ứng dụng của bạn
+                uploadStatus.textContent = `Uploaded file: ${file.name}`;
+            } else {
+                uploadStatus.textContent = 'Please select a file to upload.';
+            }
+        }
+
+        function downloadFile() {
+            // Tạo tệp ví dụ để tải xuống
+            const blob = new Blob(["This is a sample file."], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "sample.txt";
+            link.click();
+        }
+    </script>
+</body>
+</html>
