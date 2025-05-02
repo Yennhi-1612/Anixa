@@ -1,0 +1,18 @@
+#navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.navbar-item-container {
+  margin-right: 20px;
+}
+
+.navbar-btn {
+  height: 35px;
+  width: 120px;
+  border-radius: 20px;
+  border-color: #4c8caf;
+  cursor: pointer;
+}

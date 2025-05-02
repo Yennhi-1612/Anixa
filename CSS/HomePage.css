@@ -1,42 +1,16 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+#homepage {
+  width: 100%;
 }
 
-.content {
-    width: 100%;
+#homepage p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
 }
 
-.content p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-}
-
-.content-img {
-    width: 100%;
-}
-
-.footer {
-    background-color: #4c8caf;
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.footer-left {
-    font-size: 13px;
-}
-
-.footer-right {
-    text-align: center;
-}
-
-.footer-right img {
-    width: 250px;
-    cursor: pointer;
+.homepage-img {
+  max-width: 100%; /* Không vượt quá chiều rộng */
+  max-height: 100%; /* Không vượt quá chiều cao */
+  object-fit: contain; /* Giữ tỉ lệ khung hình và điều chỉnh sao cho ảnh vừa vặn */
 }
