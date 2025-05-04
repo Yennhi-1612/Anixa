@@ -1,14 +1,40 @@
+<?php
+// Lấy ID từ URL
+$product_id = $_GET['id'] ?? null;
+
+if (!$product_id) {
+    die("Không có sản phẩm để hiển thị.");
+}
+
+$conn = getDBConnection();
+
+// Truy vấn chi tiết sản phẩm
+$sql = "SELECT id, product_name_vn, product_name_en, image_url, product_detail, product_applications FROM products WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $product_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    die("Sản phẩm không tồn tại.");
+}
+
+$product = $result->fetch_assoc();
+?>
+
 <div class="product-detail">
     <div class="product-detail-left">
-        <img src="../IMG/616azf/616azf foils_T.png" alt="">
+        <img src="<?= htmlspecialchars($product['image_url']) ?>" alt="Ảnh sản phẩm">
     </div>
     <div class="product-detail-right">
-        <p class="product-detail-name-vn">TÀU CÁNH NGẦM THỂ THAO MINI NĂNG LƯỢNG ĐIỆN - ĐIỆN MẶT TRỜI</p>
-        <p class="product-detail-name-en">RECREATIONAL SOLARELECTRIC MINI FOILCAT</p>
+        <p class="product-detail-name-vn"><?= htmlspecialchars($product['product_name_vn']) ?></p>
+        <p class="product-detail-name-en"><?= htmlspecialchars($product['product_name_en']) ?></p>
         <p class="product-detail-parameter">Thông số</p>
-        <p class="product-detail-detail">-Dài=6m40 Dài tk=6m00 Rộng=1m60 Chiều chìm=0m48 Sức chở=4-8pax
-            -Pin: 2x48V|100A , Pin mặt trời: 1000wp
-            -Sofa, Sàn bơi, 3 lối lên xuống </p>
-        <p class="product-">ỨNG DỤNG: THỂ THAO GIẢI TRÍ, TÀU CÂU, TÀU NGẮM CẢNH…. </p>
+        <p class="product-detail-detail"><?= htmlspecialchars($product['product_detail']) ?></p>
+        <p class="product-">ỨNG DỤNG: <?= htmlspecialchars($product['product_applications']) ?></p>
     </div>
 </div>
+
+<?php
+closeDBConnection($conn);
+?>

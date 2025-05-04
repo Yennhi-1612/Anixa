@@ -1,5 +1,4 @@
 #navbar {
-  height: 70px;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -10,7 +9,6 @@
 }
 
 .navbar-btn {
-  height: 35px;
   width: 120px;
   border-radius: 20px;
   border-color: #4c8caf;
