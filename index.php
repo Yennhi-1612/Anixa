@@ -1,6 +1,13 @@
 <?php
+session_start();
 include('config.php');
 include('db.php');
+
+// Kiểm tra đăng nhập
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    include 'Login.php';
+    exit;
+}
 
 // Khai báo biến page sớm trước khi dùng
 $page = $_GET['page'] ?? 'home';
@@ -17,8 +24,10 @@ $page = $_GET['page'] ?? 'home';
     <link rel="stylesheet" href="/anixa/css/Header.css">
     <link rel="stylesheet" href="/anixa/css/Navbar.css">
     <link rel="stylesheet" href="/anixa/css/Footer.css">
-    <link rel="stylesheet" href="/anixa/css/Product.css">
+    <!-- <link rel="stylesheet" href="/anixa/css/Product.css"> -->
     <link rel="stylesheet" href="/anixa/css/HomePage.css">
+    <link rel="stylesheet" href="/anixa/css/ProductDetail.css">
+    <link rel="stylesheet" href="/anixa/css/CreateUpdateProduct.css">
 </head>
 
 <body>
@@ -27,10 +36,13 @@ $page = $_GET['page'] ?? 'home';
 
     <div id="main-content">
         <?php
-        if ($page === 'product') {
-            include 'pages/Product.php';
-        } elseif ($page === 'productDetail') {
+        // if ($page === 'product') {
+        //     include 'pages/Product.php';
+        // } else
+        if ($page === 'productDetail') {
             include 'pages/productDetail.php';
+        } else if ($page === 'create') {
+            include 'pages/CreateUpdateProduct.php';
         } else {
             include 'pages/Homepage.php';
         }

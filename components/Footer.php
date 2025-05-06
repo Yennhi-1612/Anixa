@@ -12,3 +12,9 @@
         <p style="font-weight: bold;">Design by: Yến Nhi</p>
     </div>
 </div>
+
+<script>
+    function goToInstagram() {
+        window.location.href = "https://www.instagram.com/solanixa/profilecard/";
+    }
+</script>

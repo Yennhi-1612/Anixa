@@ -2,7 +2,7 @@
   background-color: #4c8caf;
   padding: 20px;
   color: white;
-  height: 30px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,7 +26,9 @@
 }
 
 .user-dropdown {
+  display: none;
   width: 100px;
+  padding: 10px 0;
   background-color: #e6e3e3;
   position: absolute;
   top: 50px;
@@ -34,5 +36,13 @@
   color: #2b2323;
   text-align: center;
   border-radius: 10px;
-  display: none;
+  box-shadow: inset;
+}
+
+.user-dropdown a {
+  text-decoration: none;
+}
+
+.user:hover .user-dropdown {
+  display: block; /* Hiện dropdown khi hover vào user */
 }

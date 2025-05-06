@@ -2,13 +2,11 @@
 include('config.php');
 
 function getDBConnection() {
-    $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+    return new mysqli('localhost', 'root', '', 'anixa_productdb');
+}
 
-    if ($conn->connect_error) {
-        die("Kết nối thất bại: " . $conn->connect_error);
-    }
-
-    return $conn;
+function getAuthDBConnection() {
+    return new mysqli('localhost', 'root', '', 'anixa_authdb');
 }
 
 function closeDBConnection($conn) {

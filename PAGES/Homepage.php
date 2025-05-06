@@ -1,4 +1,6 @@
 <div id="homepage">
-    <p>TÀU THUYỀN ĐIỆN MẶT TRỜI - TIÊU CHUẨN CHO 1 THẾ HỆ MỚI </p>
-    <!-- <img class="homepage-img" src="/anixa/img/616azf/616azf stb00.png" alt=""> -->
+    <p class="homepage-title">TÀU THUYỀN ĐIỆN MẶT TRỜI - TIÊU CHUẨN CHO 1 THẾ HỆ MỚI </p>
+    <p class="homepage-content">Nhìn về tương lai, quá trình chuyển đổi năng lượng cũng đang được mở rộng cho sự sống trên mặt nước. Một thế hệ tàu thuyền thân thiện với môi trường mới sẽ sớm chinh phục sông nước và các đại dương trên thế giới.
+    Du thuyền năng lượng mặt trời của chúng tôi gây ấn tượng không chỉ với nguồn cung cấp năng lượng tái tạo, hệ thống truyền động điện mạnh mẽ và thiết kế theo kiến trúc Axy độc quyền của ANIXA đề cao tính năng, sự tối giản dễ tiếp cận, tiết kiệm tối đa chi phí vận hành mà còn tạo ra sự thoải mái cao nhất. Tất cả các hệ thống trên tàu đều có thể sử dụng mặt trời làm nguồn năng lượng chính. Sự di chuyển không chỉ thân thiện với môi trường mà còn hầu như không phát ra âm thanh, khí thải. Tàu chạy bằng năng lượng mặt trời của chúng tôi tự cung cấp năng lượng không hạn chế khi trời nắng cho giải tốc độ 4-12 knot . Tuy nhiên, Anixa cũng có các phiên bản cao tốc với thiết kế cánh ngầm tích hợp đặc biêt có thể đạt tốc độ lên tới 25 knot cho các hoạt động cự ly dưới 100km. Chúng tôi đặt ra các tiêu chuẩn mới về sự thân thiện với người dùng, sự thoải mái và tự do cá nhân. </p>
+    <img src="/anixa/img/thuyen.png" alt="">
 </div>

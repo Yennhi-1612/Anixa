@@ -1,17 +1,24 @@
 #homepage {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa ngang nội dung */
+  text-align: center;  /* Căn giữa văn bản nếu cần */
 }
 
-#homepage p {
+.homepage-title {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   color: red;
 }
 
-.homepage-img {
-  max-width: 100%; /* Không vượt quá chiều rộng */
-  max-height: 100%; /* Không vượt quá chiều cao */
-  object-fit: contain; /* Giữ tỉ lệ khung hình và điều chỉnh sao cho ảnh vừa vặn */
+.homepage-content {
+  text-align: center;
+  font-size: 18px;
+  padding: 0 60px;
+}
+
+#homepage img {
+  max-width: 100%;
+  height: auto;
 }

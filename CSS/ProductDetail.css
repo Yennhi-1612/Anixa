@@ -2,11 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+}
+.product-detail-left img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Hoặc 'contain' nếu muốn toàn bộ ảnh hiển thị */
+  border-radius: 10px; /* Tuỳ chọn để bo góc ảnh */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tuỳ chọn để đẹp hơn */
 }
 
 .product-detail-right {
   margin-left: 50px;
-  font-size: larger;
 }
 
 .product-detail-name-vn {
@@ -21,4 +28,15 @@
 
 .product-detail-parameter {
   font-weight: bold;
+}
+
+.download-btn {
+  padding: 5px 15px;
+  background-color: #184f6d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.download-btn:hover {
+  background-color: #0056b3;
 }
