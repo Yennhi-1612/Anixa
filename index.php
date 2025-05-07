@@ -43,6 +43,10 @@ $page = $_GET['page'] ?? 'home';
             include 'pages/productDetail.php';
         } else if ($page === 'create') {
             include 'pages/CreateUpdateProduct.php';
+        } else if ($page === 'duck') {
+            include 'pages/Duck.php';
+        } else if ($page === 'engine') {
+            include 'pages/EngineBLDC.php';
         } else {
             include 'pages/Homepage.php';
         }

@@ -15,9 +15,9 @@ if ($product_id <= 0) {
 $conn = getDBConnection();
 
 // Truy vấn chi tiết sản phẩm
-$sql = "SELECT id, product_name_vn, product_name_en, image_url, product_detail, product_applications, docs_url 
-        FROM products 
-        WHERE id = ?";
+$sql = "SELECT id, product_name_vn, product_name_en, image_url, product_detail, product_applications, docs_url, category_id 
+FROM products 
+WHERE id = ?";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $product_id);
@@ -43,11 +43,34 @@ $product = $result->fetch_assoc();
         <p class="product-detail-parameter">Thông số</p>
         <p class="product-detail-detail"><?= nl2br(htmlspecialchars($product['product_detail'])) ?></p>
         <p class="product-">ỨNG DỤNG: <?= nl2br(htmlspecialchars($product['product_applications'])) ?></p>
-        <?php if (!empty($product['docs_url']) && isset($_SESSION['role_id']) && $_SESSION['role_id'] === 1): ?>
-            <a href="<?= htmlspecialchars($product['docs_url']) ?>" download class="download-btn">Tải tài liệu</a>
+        <!-- <?php if (!empty($product['docs_url']) && isset($_SESSION['role_id']) && $_SESSION['role_id'] === 1): ?>
+            <a href="DownloadFile.php?id=<?= $product_id ?>" class="download-btn">Tải tài liệu</a>
         <?php else: ?>
             <p style="color: gray;">Không có tài liệu đính kèm hoặc bạn không có quyền tải.</p>
-        <?php endif; ?>
+        <?php endif; ?> -->
+
+        <?php
+        // Lấy category_id của sản phẩm
+        $category_id = $product['category_id'];
+
+        // Kiểm tra quyền của người dùng
+        if (isset($_SESSION['role_id'])) {
+            $role_id = $_SESSION['role_id'];
+
+            // Hiển thị nút tải tài liệu nếu role_id phù hợp
+            if ($role_id == 1 || $role_id == $category_id) {
+                // Được phép tải tài liệu
+                ?>
+                <a href="DownloadFile.php?id=<?= $product_id ?>" class="download-btn">Tải tài liệu</a>
+                <?php
+            } else {
+                // Không có quyền
+                echo "<p style='color: gray;'>Bạn không có quyền tải tài liệu này.</p>";
+            }
+        } else {
+            echo "<p style='color: gray;'>Vui lòng đăng nhập để tải tài liệu.</p>";
+        }
+        ?>
     </div>
 </div>
 

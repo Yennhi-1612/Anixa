@@ -3,6 +3,7 @@
     <h3>CHÀO MỪNG BẠN ĐẾN VỚI ANIXA</h3>
     <div class="user">
         <?php if (isset($_SESSION['username'])): ?>
+            <span class="username"><?= htmlspecialchars($_SESSION['username']) ?></span>
             <img src="/anixa/img/User_icon_2.svg.png" alt="" class="avatar" onclick="toggleDropdown()">
             <div class="user-dropdown" id="userDropdown">
                 <a href="logout.php">Đăng xuất</a>
@@ -12,6 +13,7 @@
         <?php endif; ?>
     </div>
 </div>
+
 <script>
     // Lắng nghe sự kiện click trên toàn bộ trang
     document.addEventListener('click', function(event) {

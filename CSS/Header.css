@@ -15,6 +15,17 @@
 .user {
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #544e4e;
+  padding: 0 0 0 10px;
+  border-radius: 20px;
+}
+
+.username {
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .avatar {

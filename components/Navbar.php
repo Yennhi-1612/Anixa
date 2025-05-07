@@ -28,7 +28,7 @@ if ($result && $result->num_rows > 0) {
     <div class="navbar-item-container">
         <p class="navbar-item" onclick="goToHomePage()">Trang chủ</p>
         <?php if (isset($_SESSION['role_id']) && $_SESSION['role_id'] === 1): ?>
-        <p class="navbar-item" onclick="goToCreateProduct()">Quản lý</p>
+            <p class="navbar-item" onclick="goToCreateProduct()">Quản lý</p>
         <?php endif; ?>
         <?php foreach ($menu as $category => $products): ?>
             <div class="navbar-item-wrapper">
@@ -45,20 +45,52 @@ if ($result && $result->num_rows > 0) {
             </div>
         <?php endforeach; ?>
         <!-- thêm tuỳ ý -->
+        <div class="navbar-item-wrapper">
+            <p class="navbar-item">Công nghệ</p>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" onclick="goToDuck()">
+                    Chân vịt Mango
+                </div>
+                <div class="dropdown-item" onclick="goToEngine()">
+                    Động cơ BLDC
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item-wrapper">
+            <p class="navbar-item">Liên hệ</p>
+            <div class="dropdown-menu">
+                <div class="dropdown-item">
+                    TP. Hồ Chí Minh
+                </div>
+                <div class="dropdown-item">
+                    Hà Nội
+                </div>
+                <div class="dropdown-item">
+                    Đà Nẵng
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-function goToProductDetail(id) {
-    window.location.href = 'index.php?page=productDetail&id=' + id;
-}
+    function goToProductDetail(id) {
+        window.location.href = 'index.php?page=productDetail&id=' + id;
+    }
 
-function goToHomePage() {
-    window.location.href = 'index.php?page=';
-}
+    function goToHomePage() {
+        window.location.href = 'index.php?page=';
+    }
 
-function goToCreateProduct() {
-    window.location.href = 'index.php?page=create';
-}
+    function goToCreateProduct() {
+        window.location.href = 'index.php?page=create';
+    }
+
+    function goToDuck() {
+        window.location.href = 'index.php?page=duck';
+    }
+
+    function goToEngine() {
+        window.location.href = 'index.php?page=engine';
+    }
 </script>
-
